@@ -19,7 +19,7 @@ function renderizarTarefas() {
     mensagem.style.color = "#28A745"
     const listagemTarefas = document.getElementById("listaTarefas")
     listagemTarefas.innerHTML = ""
-    
+
     for (let i = 0; i < lista_tarefas.length; i++) {
         let li = document.createElement('li')
         li.textContent = lista_tarefas[i]
@@ -38,15 +38,16 @@ function renderizarTarefas() {
         li.appendChild(botaoEditar)
         listagemTarefas.appendChild(li)
     }
+    atualizarBotaoLimpar()
 }
 function removerTarefa(i) {
-    lista_tarefas.splice(i,1)
+    lista_tarefas.splice(i, 1)
     renderizarTarefas()
 }
 
-function editarTarefa(i){
+function editarTarefa(i) {
     let tarefaEditada = prompt("Edite o nome da tarefa:")
-    if(tarefaEditada.trim() !== "") {
+    if (tarefaEditada.trim() !== "") {
         lista_tarefas[i] = tarefaEditada
     }
     renderizarTarefas()
@@ -58,3 +59,13 @@ function limparLista() {
     const mensagem = document.getElementById("mensagem")
     mensagem.textContent = "Lista de tarefas limpa com sucesso"
 }
+
+function atualizarBotaoLimpar() {
+    const botaoLimpar = document.querySelector(".botao_lista")
+    if (lista_tarefas.length > 0) {
+        botaoLimpar.style.display = "inline-block"
+    } else {
+        botaoLimpar.style.display = "none"
+    }
+}
+atualizarBotaoLimpar()
