@@ -6,7 +6,7 @@ function adicionarTarefa() {
     const addTarefa = document.getElementById("inputTarefa").value.trim();
     //constante que conecta com o elemnto p com id mensagem
     const mensagem = document.getElementById("mensagem")
-//Se o campo de texto estiver vazio, retorna um alerta
+    //Se o campo de texto estiver vazio, retorna um alerta
     if (addTarefa == "") {
         //variavel que cria a mensagem de erro
         let mensagemErro = "O campo está vazio, digite uma tarefa para ser adicionada";
